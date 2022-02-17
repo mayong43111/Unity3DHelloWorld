@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonClick : MonoBehaviour
+public class IndexController : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void StartGame()
     {
-        Debug.Log("Button Clicked. TestClick.");
-        SceneManager.LoadScene("Playground");
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        LoadingHelper.Instance.LoadScene("Playground");
     }
 }
